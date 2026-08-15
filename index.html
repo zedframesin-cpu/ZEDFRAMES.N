@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -12,7 +13,6 @@
 :root{
   --bg:#050816;
   --card:#0b1022;
-  --card2:#10172d;
   --blue:#0b5cff;
   --red:#ff1744;
   --neon:#00f5ff;
@@ -46,16 +46,12 @@ a{
   color:inherit;
 }
 
-img{
-  max-width:100%;
-}
-
 .container{
   width:min(1150px,92%);
   margin:auto;
 }
 
-/* NAVBAR */
+/* ================= NAVBAR ================= */
 
 nav{
   position:sticky;
@@ -88,7 +84,7 @@ nav{
 
 .nav-links{
   display:flex;
-  gap:25px;
+  gap:22px;
   font-size:14px;
 }
 
@@ -108,7 +104,7 @@ nav{
   font-weight:bold;
 }
 
-/* HERO */
+/* ================= HERO ================= */
 
 .hero{
   min-height:92vh;
@@ -116,10 +112,14 @@ nav{
   place-items:center;
   text-align:center;
   padding:90px 0 70px;
+  position:relative;
+  overflow:hidden;
 }
 
 .hero-content{
   max-width:900px;
+  position:relative;
+  z-index:5;
 }
 
 .badge{
@@ -168,6 +168,7 @@ nav{
   font-weight:800;
   border:1px solid var(--border);
   transition:.3s;
+  cursor:pointer;
 }
 
 .btn:hover{
@@ -186,63 +187,57 @@ nav{
   background:rgba(255,255,255,.04);
 }
 
-/* FLOATING SOFTWARE */
+/* ================= FLOATING SOFTWARE ================= */
 
 .software-float{
-  position:fixed;
+  position:absolute;
   inset:0;
   pointer-events:none;
-  z-index:1;
+  z-index:2;
   overflow:hidden;
 }
 
 .software-float img{
   position:absolute;
-  width:55px;
-  height:55px;
+  width:58px;
+  height:58px;
   object-fit:contain;
   padding:8px;
   border-radius:15px;
-  background:rgba(10,16,35,.8);
+  background:rgba(10,16,35,.88);
   border:1px solid rgba(255,255,255,.13);
-  box-shadow:0 0 20px rgba(0,245,255,.12);
-  animation:floatIcon 12s infinite ease-in-out;
+  box-shadow:0 0 20px rgba(0,245,255,.15);
+  animation:floatIcon 6s ease-in-out infinite;
 }
 
 .software-float img:nth-child(1){
-  left:5%;
-  top:25%;
-  animation-delay:0s;
+  left:7%;
+  top:24%;
 }
 
 .software-float img:nth-child(2){
-  right:6%;
-  top:30%;
-  animation-delay:2s;
+  right:7%;
+  top:28%;
+  animation-delay:1.5s;
 }
 
 .software-float img:nth-child(3){
-  left:10%;
-  bottom:18%;
-  animation-delay:4s;
-}
-
-.software-float img:nth-child(4){
-  right:12%;
-  bottom:15%;
-  animation-delay:6s;
+  left:12%;
+  bottom:17%;
+  animation-delay:3s;
 }
 
 @keyframes floatIcon{
   0%,100%{
-    transform:translateY(0) rotate(-5deg);
+    transform:translateY(0) rotate(-4deg);
   }
+
   50%{
-    transform:translateY(-35px) rotate(5deg);
+    transform:translateY(-20px) rotate(4deg);
   }
 }
 
-/* SECTIONS */
+/* ================= SECTIONS ================= */
 
 section{
   padding:90px 0;
@@ -269,7 +264,7 @@ section{
   color:var(--muted);
 }
 
-/* ABOUT */
+/* ================= ABOUT ================= */
 
 .about-grid{
   display:grid;
@@ -310,7 +305,7 @@ section{
   margin-right:10px;
 }
 
-/* SERVICES */
+/* ================= SERVICES ================= */
 
 .services-grid{
   display:grid;
@@ -344,7 +339,7 @@ section{
   color:var(--muted);
 }
 
-/* BEFORE AFTER */
+/* ================= BEFORE / AFTER ================= */
 
 .video-grid{
   display:grid;
@@ -371,7 +366,7 @@ section{
   background:#000;
 }
 
-/* PACKAGES */
+/* ================= PACKAGES ================= */
 
 .packages-grid{
   display:grid;
@@ -435,7 +430,7 @@ section{
   margin-right:8px;
 }
 
-/* HOW IT WORKS */
+/* ================= HOW IT WORKS ================= */
 
 .steps{
   display:grid;
@@ -472,7 +467,7 @@ section{
   font-size:13px;
 }
 
-/* PORTFOLIO */
+/* ================= PORTFOLIO ================= */
 
 .portfolio-card{
   text-align:center;
@@ -494,7 +489,7 @@ section{
   margin-bottom:25px;
 }
 
-/* REVIEWS */
+/* ================= REVIEWS ================= */
 
 .reviews-grid{
   display:grid;
@@ -526,7 +521,7 @@ section{
   font-size:14px;
 }
 
-/* CONTACT */
+/* ================= CONTACT ================= */
 
 .contact-grid{
   display:grid;
@@ -582,7 +577,7 @@ textarea{
   resize:vertical;
 }
 
-/* FOOTER */
+/* ================= FOOTER ================= */
 
 footer{
   border-top:1px solid var(--border);
@@ -592,6 +587,7 @@ footer{
 
 footer p{
   color:var(--muted);
+  margin-top:5px;
 }
 
 .socials{
@@ -599,15 +595,22 @@ footer p{
   justify-content:center;
   gap:15px;
   margin:15px 0;
+  flex-wrap:wrap;
 }
 
 .socials a{
   border:1px solid var(--border);
   padding:9px 15px;
   border-radius:30px;
+  transition:.3s;
 }
 
-/* WHATSAPP */
+.socials a:hover{
+  border-color:var(--neon);
+  color:var(--neon);
+}
+
+/* ================= WHATSAPP ================= */
 
 .whatsapp{
   position:fixed;
@@ -624,7 +627,7 @@ footer p{
   box-shadow:0 0 25px rgba(37,211,102,.4);
 }
 
-/* RESPONSIVE */
+/* ================= MOBILE ================= */
 
 @media(max-width:850px){
 
@@ -656,6 +659,21 @@ footer p{
     width:42px;
     height:42px;
   }
+
+  .software-float img:nth-child(1){
+    left:3%;
+    top:20%;
+  }
+
+  .software-float img:nth-child(2){
+    right:3%;
+    top:25%;
+  }
+
+  .software-float img:nth-child(3){
+    left:5%;
+    bottom:15%;
+  }
 }
 
 @media(max-width:480px){
@@ -677,35 +695,19 @@ footer p{
   .review{
     padding:22px;
   }
+
+  .software-float img{
+    width:38px;
+    height:38px;
+    padding:6px;
+  }
 }
 </style>
 </head>
 
 <body>
 
-<!-- FLOATING SOFTWARE LOGOS -->
-<div class="software-float">
-
-  <img
-    src="https://img.icons8.com/color/96/adobe-premiere-pro.png"
-    alt="Adobe Premiere Pro">
-
-  <img
-    src="https://img.icons8.com/color/96/adobe-photoshop--v1.png"
-    alt="Adobe Photoshop">
-
-  <img
-    src="https://img.icons8.com/color/96/canva.png"
-    alt="Canva">
-
-  <img
-    src="https://img.icons8.com/color/96/capcut.png"
-    alt="CapCut">
-
-</div>
-
-
-<!-- NAVBAR -->
+<!-- ================= NAVBAR ================= -->
 
 <nav>
   <div class="nav-inner">
@@ -718,6 +720,7 @@ footer p{
       <a href="#home">Home</a>
       <a href="#about">About</a>
       <a href="#services">Services</a>
+      <a href="#before-after">Before / After</a>
       <a href="#packages">Packages</a>
       <a href="#reviews">Reviews</a>
       <a href="#contact">Contact</a>
@@ -734,9 +737,27 @@ footer p{
 </nav>
 
 
-<!-- HERO -->
+<!-- ================= HERO ================= -->
 
 <section class="hero" id="home">
+
+  <!-- SOFTWARE ICONS FLOAT ONLY INSIDE HERO -->
+
+  <div class="software-float">
+
+    <img
+      src="https://img.icons8.com/color/96/adobe-premiere-pro.png"
+      alt="Adobe Premiere Pro">
+
+    <img
+      src="https://img.icons8.com/color/96/adobe-photoshop--v1.png"
+      alt="Adobe Photoshop">
+
+    <img
+      src="https://img.icons8.com/color/96/canva.png"
+      alt="Canva">
+
+  </div>
 
   <div class="hero-content">
 
@@ -782,7 +803,7 @@ footer p{
 </section>
 
 
-<!-- ABOUT -->
+<!-- ================= ABOUT ================= -->
 
 <section id="about">
 
@@ -818,7 +839,6 @@ footer p{
 
       </div>
 
-
       <div class="card">
 
         <h3>📍 Service Area</h3>
@@ -845,7 +865,7 @@ footer p{
 </section>
 
 
-<!-- SERVICES -->
+<!-- ================= SERVICES ================= -->
 
 <section id="services">
 
@@ -854,7 +874,9 @@ footer p{
     <div class="section-title">
       <small>Our Services</small>
       <h2>What We Create</h2>
-      <p>Visual content designed to make your business look better online.</p>
+      <p>
+        Visual content designed to make your business look better online.
+      </p>
     </div>
 
     <div class="services-grid">
@@ -893,7 +915,7 @@ footer p{
 </section>
 
 
-<!-- BEFORE AFTER -->
+<!-- ================= BEFORE / AFTER ================= -->
 
 <section id="before-after">
 
@@ -920,7 +942,6 @@ footer p{
 
       </div>
 
-
       <div class="video-card">
 
         <h3>✨ AFTER</h3>
@@ -939,7 +960,7 @@ footer p{
 </section>
 
 
-<!-- PACKAGES -->
+<!-- ================= PACKAGES ================= -->
 
 <section id="packages">
 
@@ -948,11 +969,12 @@ footer p{
     <div class="section-title">
       <small>Monthly Packages</small>
       <h2>Choose Your Plan</h2>
-      <p>Simple packages for businesses that want consistent content.</p>
+      <p>
+        Simple packages for businesses that want consistent content.
+      </p>
     </div>
 
     <div class="packages-grid">
-
 
       <!-- STARTER -->
 
@@ -987,7 +1009,9 @@ footer p{
 
       <div class="package featured">
 
-        <div class="popular">POPULAR</div>
+        <div class="popular">
+          POPULAR
+        </div>
 
         <h3>Growth</h3>
 
@@ -1028,9 +1052,10 @@ footer p{
         <ul>
           <li>10 Videos Monthly</li>
           <li>Flexible Shoot Schedule</li>
+          <li>Shoot When Required</li>
           <li>Professional Video Shoot</li>
           <li>Advanced Video Editing</li>
-          <li>Content as required</li>
+          <li>Content as Required</li>
         </ul>
 
         <a
@@ -1049,7 +1074,7 @@ footer p{
 </section>
 
 
-<!-- HOW IT WORKS -->
+<!-- ================= HOW IT WORKS ================= -->
 
 <section id="how-it-works">
 
@@ -1058,7 +1083,9 @@ footer p{
     <div class="section-title">
       <small>Simple Process</small>
       <h2>How It Works</h2>
-      <p>From your idea to your final video.</p>
+      <p>
+        From your idea to your final video.
+      </p>
     </div>
 
     <div class="steps">
@@ -1066,31 +1093,41 @@ footer p{
       <div class="step">
         <div class="step-icon">💬</div>
         <h3>1. Contact</h3>
-        <p>Tell us about your business and requirement.</p>
+        <p>
+          Tell us about your business and requirement.
+        </p>
       </div>
 
       <div class="step">
         <div class="step-icon">📋</div>
         <h3>2. Plan</h3>
-        <p>We discuss the content and shoot plan.</p>
+        <p>
+          We discuss the content and shoot plan.
+        </p>
       </div>
 
       <div class="step">
         <div class="step-icon">📹</div>
         <h3>3. Shoot</h3>
-        <p>We come to your location and shoot.</p>
+        <p>
+          We come to your location and shoot.
+        </p>
       </div>
 
       <div class="step">
         <div class="step-icon">💻</div>
         <h3>4. Edit</h3>
-        <p>Your footage is professionally edited.</p>
+        <p>
+          Your footage is professionally edited.
+        </p>
       </div>
 
       <div class="step">
         <div class="step-icon">🚀</div>
         <h3>5. Deliver</h3>
-        <p>You receive social-media-ready content.</p>
+        <p>
+          You receive social-media-ready content.
+        </p>
       </div>
 
     </div>
@@ -1100,7 +1137,7 @@ footer p{
 </section>
 
 
-<!-- PORTFOLIO -->
+<!-- ================= PORTFOLIO ================= -->
 
 <section id="portfolio">
 
@@ -1109,6 +1146,9 @@ footer p{
     <div class="section-title">
       <small>Portfolio</small>
       <h2>See Our Work</h2>
+      <p>
+        Explore our creative work and video projects.
+      </p>
     </div>
 
     <div class="portfolio-card">
@@ -1133,7 +1173,7 @@ footer p{
 </section>
 
 
-<!-- REVIEWS -->
+<!-- ================= REVIEWS ================= -->
 
 <section id="reviews">
 
@@ -1142,50 +1182,63 @@ footer p{
     <div class="section-title">
       <small>Client Reviews</small>
       <h2>What Clients Say</h2>
-      <p>Businesses we've worked with.</p>
+      <p>
+        Businesses we've worked with.
+      </p>
     </div>
 
     <div class="reviews-grid">
 
-
       <div class="review">
 
-        <div class="stars">★★★★★</div>
+        <div class="stars">
+          ★★★★★
+        </div>
 
         <p>
           “Professional work and very good video presentation.
           Our store content looks much better now.”
         </p>
 
-        <strong>BANBHORI SWEETS AND RESTAURANT</strong>
+        <strong>
+          BANBHORI SWEETS AND RESTAURANT
+        </strong>
 
       </div>
 
 
       <div class="review">
 
-        <div class="stars">★★★★★</div>
+        <div class="stars">
+          ★★★★★
+        </div>
 
         <p>
           “The videos look stylish and engaging.
           Great work for social media.”
         </p>
 
-        <strong>POOJA COSMETICS AND PATANJALI STORE</strong>
+        <strong>
+          POOJA COSMETICS AND PATANJALI STORE
+        </strong>
 
       </div>
 
 
       <div class="review">
 
-        <div class="stars">★★★★★</div>
+        <div class="stars">
+          ★★★★★
+        </div>
 
         <p>
           “Good editing and clean presentation.
           Really helped us create better content.”
         </p>
 
-        <strong>SKIN SALON</strong>
+        <strong>
+          SKIN SALON
+        </strong>
 
       </div>
 
@@ -1196,7 +1249,7 @@ footer p{
 </section>
 
 
-<!-- CONTACT -->
+<!-- ================= CONTACT ================= -->
 
 <section id="contact">
 
@@ -1205,38 +1258,33 @@ footer p{
     <div class="section-title">
       <small>Let's Work Together</small>
       <h2>Start Your Project</h2>
-      <p>Tell us what you need and we'll get back to you.</p>
+      <p>
+        Tell us what you need and we'll get back to you.
+      </p>
     </div>
 
     <div class="contact-grid">
 
+      <!-- CONTACT INFO -->
 
       <div class="card contact-info">
 
-        <h3>Contact ZED FRAMES</h3>
-
-        <div class="info">
-          <strong>📞 Phone</strong>
-          <a href="tel:+917827232645">
-            +91 7827232645
-          </a>
-        </div>
-
-        <div class="info">
-          <strong>📧 Email</strong>
-          <a href="mailto:zedframes.in@gmail.com">
-            zedframes.in@gmail.com
-          </a>
-        </div>
+        <h3>📩 Get In Touch</h3>
 
         <div class="info">
           <strong>📍 Location</strong>
-          <span>Ghaziabad & Nearby Areas</span>
+          <span>
+            Ghaziabad & Nearby Areas
+          </span>
         </div>
 
         <div class="info">
-          <strong>🕐 Opening Hours</strong>
-          <span>Anytime</span>
+          <strong>📱 WhatsApp</strong>
+          <a
+            href="https://wa.me/917827232645"
+            target="_blank">
+            +91 78272 32645
+          </a>
         </div>
 
         <div class="info">
@@ -1248,14 +1296,21 @@ footer p{
           </a>
         </div>
 
+        <div class="info">
+          <strong>🎬 Portfolio</strong>
+          <a
+            href="https://urbannframee.my.canva.site/krishnapaul"
+            target="_blank">
+            View Portfolio
+          </a>
+        </div>
+
       </div>
 
 
       <!-- CONTACT FORM -->
 
       <div class="card">
-
-        <h3>Project Enquiry</h3>
 
         <form
           action="https://formsubmit.co/zedframes.in@gmail.com"
@@ -1264,7 +1319,7 @@ footer p{
           <input
             type="hidden"
             name="_subject"
-            value="New ZED FRAMES Website Enquiry">
+            value="New ZED FRAMES Project Enquiry">
 
           <input
             type="hidden"
@@ -1272,55 +1327,58 @@ footer p{
             value="false">
 
           <input
+            type="hidden"
+            name="_template"
+            value="table">
+
+          <input
             type="text"
-            name="Name"
+            name="name"
             placeholder="Your Name"
             required>
 
           <input
             type="tel"
-            name="Phone Number"
+            name="phone"
             placeholder="Phone Number"
             required>
 
           <input
             type="text"
-            name="Business"
-            placeholder="Business / Store Name">
+            name="business"
+            placeholder="Business / Brand Name">
 
-          <select name="Package">
-
+          <select name="package">
             <option value="">
               Select Package
             </option>
 
-            <option value="Starter - ₹4999">
+            <option value="Starter - ₹4,999">
               Starter - ₹4,999
             </option>
 
-            <option value="Growth - ₹5999">
+            <option value="Growth - ₹5,999">
               Growth - ₹5,999
             </option>
 
-            <option value="Pro - ₹9999">
+            <option value="Pro - ₹9,999">
               Pro - ₹9,999
             </option>
 
             <option value="Custom">
               Custom Requirement
             </option>
-
           </select>
 
           <textarea
-            name="Project Details"
+            name="project"
             placeholder="Tell us about your project..."
             required></textarea>
 
           <button
             type="submit"
             class="btn btn-primary">
-            Send Enquiry 🚀
+            🚀 Submit Project
           </button>
 
         </form>
@@ -1334,7 +1392,7 @@ footer p{
 </section>
 
 
-<!-- FOOTER -->
+<!-- ================= FOOTER ================= -->
 
 <footer>
 
@@ -1353,23 +1411,23 @@ footer p{
       </a>
 
       <a
-        href="mailto:zedframes.in@gmail.com">
-        Email
+        href="https://wa.me/917827232645"
+        target="_blank">
+        WhatsApp
       </a>
 
-      <a
-        href="tel:+917827232645">
-        Call
+      <a href="#home">
+        Back to Top ↑
       </a>
 
     </div>
 
     <p>
-      © 2026 ZED FRAMES. All rights reserved.
+      © 2026 ZED FRAMES. All Rights Reserved.
     </p>
 
     <p>
-      Videography • Video Shoot • Video Editing
+      Videography • Video Editing • Content Creation
     </p>
 
   </div>
@@ -1377,16 +1435,15 @@ footer p{
 </footer>
 
 
-<!-- WHATSAPP FLOATING BUTTON -->
+<!-- ================= FLOATING WHATSAPP ================= -->
 
 <a
   class="whatsapp"
   href="https://wa.me/917827232645?text=Hi%20ZED%20FRAMES%2C%20I%20want%20to%20discuss%20a%20project."
   target="_blank"
-  aria-label="WhatsApp">
+  aria-label="Chat on WhatsApp">
   💬
 </a>
-
 
 </body>
 </html>
