@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ZED FRAMES | Videography & Video Editing | Ghaziabad</title>
+<meta name="description" content="ZED FRAMES creates stylish video shoots, reels, promotional videos and editing for stores and businesses in Ghaziabad and nearby areas.">
+<meta name="keywords" content="ZED FRAMES, videographer Ghaziabad, video shoot Ghaziabad, reels, video editing, business promotional video">
+<meta name="theme-color" content="#050816">
+<style>
+:root{
+  --bg:#050816;--bg2:#080d20;--card:#0c1227;--red:#ff1744;
+  --blue:#153cff;--neon:#19f7ff;--text:#f7f8ff;--muted:#aab1c7;
+  --line:#ffffff16;--green:#20d66b;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  font-family:Arial,Helvetica,sans-serif;color:var(--text);line-height:1.6;
+  background:
+  radial-gradient(circle at 85% 0,#17276d 0,transparent 28%),
+  radial-gradient(circle at 5% 35%,#30091f 0,transparent 26%),var(--bg);
+}
+body.light{--bg:#f5f7ff;--bg2:#fff;--card:#fff;--text:#101426;--muted:#59627a;--line:#10142618}
+a{text-decoration:none;color:inherit}
+button,input,textarea{font:inherit}
+nav{
+  position:fixed;top:0;width:100%;z-index:100;
+  background:rgba(5,8,22,.82);backdrop-filter:blur(14px);
+  border-bottom:1px solid var(--line)
+}
+.light nav{background:rgba(245,247,255,.88)}
+.nav{max-width:1180px;margin:auto;padding:15px 22px;display:flex;align-items:center;justify-content:space-between}
+.logo{font-size:25px;font-weight:900;letter-spacing:3px}.logo span{color:var(--red)}
+.links{display:flex;gap:21px;align-items:center}.links a{color:#dbe0f2;font-size:14px}
+.light .links a{color:#30374b}.links a:hover{color:var(--neon)}
+.nav-actions{display:flex;gap:8px;align-items:center}
+.theme,.menu{border:1px solid var(--line);background:#ffffff08;color:white;border-radius:10px;padding:7px 10px;cursor:pointer}
+.light .theme,.light .menu{color:#111827}
+.menu{display:none;font-size:23px}
+section{max-width:1180px;margin:auto;padding:100px 22px}
+.hero{min-height:100vh;display:grid;place-items:center;padding-top:125px}
+.hero-inner{text-align:center;max-width:920px}
+.badge{
+ display:inline-block;border:1px solid #19f7ff66;color:var(--neon);padding:7px 14px;
+ border-radius:30px;font-size:12px;letter-spacing:2px;margin-bottom:22px;
+ box-shadow:0 0 20px #19f7ff18
+}
+h1{font-size:clamp(50px,9vw,100px);line-height:.94;letter-spacing:-4px;text-transform:uppercase}
+h1 span{color:var(--red);text-shadow:0 0 28px #ff174466}
+.hero p{max-width:720px;margin:25px auto;color:var(--muted);font-size:18px}
+.buttons{display:flex;justify-content:center;gap:13px;flex-wrap:wrap}
+.btn{
+ display:inline-block;padding:13px 21px;border-radius:10px;font-weight:800;
+ border:1px solid #ffffff20;transition:.25s;cursor:pointer
+}
+.primary{background:linear-gradient(135deg,var(--red),#b800ff);box-shadow:0 0 25px #ff174433}
+.secondary{background:#ffffff08}
+.btn:hover{transform:translateY(-3px);box-shadow:0 0 25px #19f7ff33}
+.title{font-size:40px;margin-bottom:9px}.sub{color:var(--muted);margin-bottom:30px}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.card{
+ background:linear-gradient(145deg,#101833,#070b18);border:1px solid var(--line);
+ border-radius:18px;padding:25px;transition:.3s
+}
+.light .card{background:linear-gradient(145deg,#fff,#f2f5ff)}
+.card:hover{transform:translateY(-6px);border-color:#19f7ff55;box-shadow:0 15px 40px #0006}
+.icon{font-size:32px;margin-bottom:12px}.card h3{margin-bottom:7px}.card p{color:var(--muted);font-size:14px}
+.services .card{min-height:180px}
+.software-row{display:grid;grid-template-columns:repeat(4,1fr);gap:15px;margin-top:25px}
+.software{
+ text-align:center;background:#ffffff06;border:1px solid var(--line);padding:20px 10px;
+ border-radius:15px;animation:floatSoftware 3.6s ease-in-out infinite;
+ box-shadow:0 10px 30px #0003
+}
+.software:nth-child(2){animation-delay:.45s}
+.software:nth-child(3){animation-delay:.9s}
+.software:nth-child(4){animation-delay:1.35s}
+@keyframes floatSoftware{
+ 0%,100%{transform:translateY(0) rotate(0deg)}
+ 50%{transform:translateY(-14px) rotate(1deg)}
+}
+.software-icon{
+ width:55px;height:55px;margin:0 auto 10px;border-radius:13px;display:grid;place-items:center;
+ background:linear-gradient(135deg,#ff1744,#153cff);font-size:22px;font-weight:900
+}
+.software p{font-size:13px;color:var(--muted)}
+.portfolio{
+ background:linear-gradient(135deg,#101833,#080b18);border:1px solid var(--line);
+ border-radius:20px;padding:45px;text-align:center
+}
+.light .portfolio{background:#fff}
+.portfolio-link{display:block;cursor:pointer}
+.portfolio-link:hover{border-color:#19f7ff88;box-shadow:0 18px 50px #19f7ff18}
+.portfolio .big{font-size:55px;margin-bottom:8px}
+.portfolio p{color:var(--muted);margin:8px auto 22px;max-width:600px}
+.steps .card{text-align:left}.step-no{color:var(--neon);font-size:12px;font-weight:900;letter-spacing:1px}
+.step-icon{font-size:31px;margin:10px 0}
+.package-list{margin:12px 0 0 18px;color:var(--muted);font-size:14px}
+.price{font-size:31px;margin:15px 0;color:var(--neon)}
+.price small{font-size:14px;color:var(--muted)}
+.featured{border-color:#ff174466;box-shadow:0 0 30px #ff174415;position:relative}
+.popular{
+ position:absolute;right:18px;top:18px;background:var(--red);font-size:11px;
+ padding:5px 9px;border-radius:20px;font-weight:bold
+}
+.package-note{color:#8f99b5;font-size:12px;margin-top:12px}
+.reviews .card{min-height:180px}.stars{color:#ffd23f;letter-spacing:2px;margin-bottom:12px}
+.faq{display:grid;gap:12px}.faq details{
+ background:var(--card);border:1px solid var(--line);border-radius:13px;padding:17px 19px
+}
+.faq summary{cursor:pointer;font-weight:800}.faq p{color:var(--muted);margin-top:10px}
+.contact{display:grid;grid-template-columns:1fr 1fr;gap:25px}
+.contact-box{padding:30px;border-radius:18px;background:var(--card);border:1px solid var(--line)}
+.info{margin:17px 0;color:var(--muted)}.info b{color:var(--text);display:block}
+form{display:grid;gap:12px}
+input,textarea{
+ width:100%;padding:14px;border-radius:10px;border:1px solid var(--line);
+ background:#050816;color:white;outline:none
+}
+.light input,.light textarea{background:#f5f7ff;color:#111827}
+textarea{min-height:130px;resize:vertical}
+.insta{display:inline-block;margin-top:8px;color:var(--neon);font-weight:800}
+.whatsapp{
+ position:fixed;right:20px;bottom:20px;z-index:90;background:var(--green);color:#04150b;
+ padding:13px 18px;border-radius:30px;font-weight:900;box-shadow:0 8px 30px #0008
+}
+footer{border-top:1px solid var(--line);text-align:center;padding:28px 20px;color:#7f879f;font-size:13px}
+.reveal{opacity:0;transform:translateY(22px);transition:.7s}.reveal.show{opacity:1;transform:none}
+@media(max-width:850px){
+ .links{display:none}.menu{display:block}.links.open{
+  display:flex;position:absolute;top:64px;left:0;right:0;background:#070b18;
+  padding:20px;flex-direction:column;text-align:center;border-bottom:1px solid var(--line)
+ }
+ .light .links.open{background:#fff}.grid,.contact{grid-template-columns:1fr}
+ .software-row{grid-template-columns:repeat(2,1fr)}h1{letter-spacing:-2px}.title{font-size:34px}
+ .portfolio{padding:30px 20px}.whatsapp{right:14px;bottom:14px}
+}
+@media(max-width:430px){.software-row{grid-template-columns:1fr 1fr}.nav{padding:14px 15px}.logo{font-size:21px}}
+</style>
+</head>
+<body>
+
+<nav>
+ <div class="nav">
+  <a class="logo" href="#home">ZED<span>FRAMES</span></a>
+  <div class="links">
+   <a href="#home">Home</a><a href="#about">About</a><a href="#services">Services</a>
+   <a href="#portfolio">Portfolio</a><a href="#packages">Packages</a>
+   <a href="#reviews">Reviews</a><a href="#contact">Contact</a>
+  </div>
+  <div class="nav-actions">
+   <button class="theme" id="theme" aria-label="Toggle theme">☀️</button>
+   <button class="menu" aria-label="Open menu" onclick="document.querySelector('.links').classList.toggle('open')">☰</button>
+  </div>
+ </div>
+</nav>
+
+<a class="whatsapp" href="https://wa.me/917827232645?text=Hi%20ZED%20FRAMES%2C%20I%20want%20to%20book%20a%20video%20shoot." target="_blank" rel="noopener">💬 WhatsApp</a>
+
+<main>
+<section id="home" class="hero">
+ <div class="hero-inner reveal">
+  <div class="badge">VIDEOGRAPHY • EDITING • SOCIAL MEDIA • GHAZIABAD</div>
+  <h1>YOUR BRAND.<br><span>OUR FRAMES.</span></h1>
+  <p>We make your page stylish and help your business attract customers with professional video shoots, reels and premium editing.</p>
+  <div class="buttons">
+   <a class="btn primary" href="#portfolio">🎬 View Portfolio</a>
+   <a class="btn secondary" href="#packages">View Packages</a>
+   <a class="btn secondary" href="#contact">Book a Shoot</a>
+  </div>
+ </div>
+</section>
+
+<section id="about" class="reveal">
+ <h2 class="title">About ZED FRAMES</h2>
+ <p class="sub">Creative visuals made for modern stores and businesses.</p>
+ <div class="grid">
+  <div class="card"><div class="icon">🎥</div><h3>Business-Focused</h3><p>We create content designed to make your business look professional and attract attention online.</p></div>
+  <div class="card"><div class="icon">⚡</div><h3>Modern & Stylish</h3><p>Stylish reels, cinematic shots and clean edits designed for today's social media.</p></div>
+  <div class="card"><div class="icon">📍</div><h3>Local Service</h3><p>Serving Ghaziabad and nearby areas with flexible shoot scheduling for businesses.</p></div>
+ </div>
+</section>
+
+<section id="services" class="reveal services">
+ <h2 class="title">Services</h2>
+ <p class="sub">Everything you need to make your business content stand out.</p>
+ <div class="grid">
+  <div class="card"><div class="icon">🎬</div><h3>Video Shooting</h3><p>Professional store, product and promotional video shoots.</p></div>
+  <div class="card"><div class="icon">📱</div><h3>Reels Creation</h3><p>Short-form content created for Instagram and social media.</p></div>
+  <div class="card"><div class="icon">📦</div><h3>Product Videos</h3><p>Attractive visuals that showcase products and offers.</p></div>
+  <div class="card"><div class="icon">✂️</div><h3>Video Editing</h3><p>Creative editing with modern transitions, pacing and effects.</p></div>
+  <div class="card"><div class="icon">🎨</div><h3>Creative Direction</h3><p>Shot ideas, framing and visual concepts tailored to your business.</p></div>
+  <div class="card"><div class="icon">💻</div><h3>Editing Tools</h3><p>Adobe Premiere Pro, Photoshop, Canva and CapCut workflows.</p></div>
+ </div>
+ <h3 style="text-align:center;margin-top:65px;font-size:26px">Software I Use</h3>
+ <div class="software-row">
+  <div class="software"><div class="software-icon">Pr</div><p>Adobe Premiere</p></div>
+  <div class="software"><div class="software-icon">Ps</div><p>Photoshop</p></div>
+  <div class="software"><div class="software-icon">C</div><p>Canva</p></div>
+  <div class="software"><div class="software-icon">✂</div><p>CapCut</p></div>
+ </div>
+</section>
+
+<section id="portfolio" class="reveal">
+ <h2 class="title">See Our Work</h2>
+ <p class="sub">Explore our creative work and video projects.</p>
+ <a class="portfolio portfolio-link" href="https://urbannframee.my.canva.site/videosamples" target="_blank" rel="noopener" aria-label="Open ZED FRAMES video portfolio">
+  <div class="big">🎬</div>
+  <h3>Explore ZED FRAMES Portfolio</h3>
+  <p>Tap anywhere here to view our latest video samples and creative work.</p>
+  <span class="btn primary">Open Portfolio ↗</span>
+  <br><br>
+  <span class="btn secondary" onclick="event.preventDefault();event.stopPropagation();window.open('https://www.instagram.com/zedframes.in/','_blank')">📸 View Instagram</span>
+ </a>
+</section>
+
+<section class="reveal" id="how">
+ <h2 class="title">How It Works</h2>
+ <p class="sub">From your idea to your final video.</p>
+ <div class="grid steps">
+  <div class="card"><div class="step-no">STEP 01</div><div class="step-icon">💬</div><h3>Contact</h3><p>Tell us about your business and requirement.</p></div>
+  <div class="card"><div class="step-no">STEP 02</div><div class="step-icon">📋</div><h3>Plan</h3><p>We discuss the content and shoot plan.</p></div>
+  <div class="card"><div class="step-no">STEP 03</div><div class="step-icon">📹</div><h3>Shoot</h3><p>We come to your location and capture your content.</p></div>
+  <div class="card"><div class="step-no">STEP 04</div><div class="step-icon">💻</div><h3>Edit</h3><p>Your footage is professionally edited into polished content.</p></div>
+  <div class="card"><div class="step-no">STEP 05</div><div class="step-icon">🚀</div><h3>Deliver</h3><p>You receive social-media-ready finished videos.</p></div>
+ </div>
+</section>
+
+<section id="packages" class="reveal">
+ <h2 class="title">Packages</h2>
+ <p class="sub">Monthly content plans for stores and businesses.</p>
+ <div class="grid">
+  <div class="card">
+   <h3>STARTER</h3><div class="price">₹4,999 <small>/ month</small></div>
+   <ul class="package-list"><li>5 videos monthly</li><li>Each video under 1 minute</li><li>Video shooting included</li><li>Professional editing</li><li>Social-media-ready delivery</li></ul>
+   <p class="package-note">Best for businesses starting regular content.</p><br>
+   <a class="btn primary" href="https://wa.me/917827232645?text=Hi%20ZED%20FRAMES%2C%20I%20want%20to%20book%20the%20STARTER%20package%20for%20₹4%2C999%20per%20month." target="_blank" rel="noopener">📲 Book Now</a>
+  </div>
+  <div class="card featured">
+   <div class="popular">MOST POPULAR</div>
+   <h3>GROWTH</h3><div class="price">₹5,999 <small>/ month</small></div>
+   <ul class="package-list"><li>8 videos monthly</li><li>Each video under 1 minute</li><li>2 videos every week</li><li>Video shooting included</li><li>Professional editing</li><li>Social-media-ready delivery</li></ul>
+   <p class="package-note">Great for stores wanting consistent weekly content.</p><br>
+   <a class="btn primary" href="https://wa.me/917827232645?text=Hi%20ZED%20FRAMES%2C%20I%20want%20to%20book%20the%20GROWTH%20package%20for%20₹5%2C999%20per%20month." target="_blank" rel="noopener">📲 Book Now</a>
+  </div>
+  <div class="card">
+   <h3>PRO</h3><div class="price">₹9,999 <small>/ month</small></div>
+   <ul class="package-list"><li>10 videos monthly</li><li>Each video under 1 minute</li><li>Flexible shoot scheduling</li><li>Professional video shooting</li><li>Advanced video editing</li><li>Social-media-ready delivery</li></ul>
+   <p class="package-note">For businesses that want flexible, high-volume content.</p><br>
+   <a class="btn primary" href="https://wa.me/917827232645?text=Hi%20ZED%20FRAMES%2C%20I%20want%20to%20book%20the%20PRO%20package%20for%20₹9%2C999%20per%20month." target="_blank" rel="noopener">📲 Book Now</a>
+  </div>
+ </div>
+</section>
+
+<section id="reviews" class="reveal reviews">
+ <h2 class="title">What Clients Say</h2>
+ <p class="sub">Businesses we've worked with.</p>
+ <div class="grid">
+  <div class="card"><div class="stars">★★★★★</div><p>“Professional work and very good video presentation. Our store content looks much better now.”</p><br><strong>BANBHORI SWEETS AND RESTAURANT</strong></div>
+  <div class="card"><div class="stars">★★★★★</div><p>“The videos look stylish and engaging. Great work for social media.”</p><br><strong>POOJA COSMETICS AND PATANJALI STORE</strong></div>
+  <div class="card"><div class="stars">★★★★★</div><p>“Good editing and clean presentation. Really helped us create better content.”</p><br><strong>SKIN SALON</strong></div>
+ </div>
+</section>
+
+<section class="reveal">
+ <h2 class="title">Before → After</h2>
+ <p class="sub">See the transformation from raw footage to finished content.</p>
+ <div class="grid">
+  <div class="card" style="text-align:center">
+   <div class="icon">🎞️</div><h3>Raw Footage</h3><p>Original footage before professional editing, pacing, text and transitions.</p>
+  </div>
+  <div class="card" style="text-align:center">
+   <div class="icon">✨</div><h3>Final Edit</h3><p>Polished, engaging and social-media-ready content made to improve presentation.</p>
+  </div>
+  <div class="card" style="text-align:center">
+   <div class="icon">📈</div><h3>Better Presentation</h3><p>Stronger visuals help your business make a better first impression online.</p>
+  </div>
+ </div>
+</section>
+
+<section class="reveal">
+ <h2 class="title">Frequently Asked Questions</h2>
+ <div class="faq">
+  <details><summary>How long is each video?</summary><p>Videos in the monthly packages are planned to stay under 1 minute.</p></details>
+  <details><summary>Where do you provide service?</summary><p>ZED FRAMES serves Ghaziabad and nearby areas.</p></details>
+  <details><summary>Do you provide both shooting and editing?</summary><p>Yes. The listed monthly packages include video shooting and editing.</p></details>
+  <details><summary>How is shooting scheduled?</summary><p>Shoot dates can be planned according to your content requirements and package.</p></details>
+  <details><summary>Can I contact you before booking?</summary><p>Yes. Contact ZED FRAMES on WhatsApp, phone or email before booking.</p></details>
+ </div>
+</section>
+
+<section id="contact" class="reveal">
+ <h2 class="title">Let's Create</h2>
+ <p class="sub">Have a store or business that needs better content?</p>
+ <div class="contact">
+  <div class="contact-box">
+   <h3>📲 Contact ZED FRAMES</h3>
+   <div class="info"><b>📞 Phone / WhatsApp</b><a href="https://wa.me/917827232645" target="_blank" rel="noopener">+91 78272 32645</a></div>
+   <div class="info"><b>✉️ Email</b><a href="mailto:zedframes.in@gmail.com">zedframes.in@gmail.com</a></div>
+   <div class="info"><b>🕐 Hours</b>Anytime</div>
+   <div class="info"><b>📍 Service Area</b>Ghaziabad & nearby areas</div>
+   <div class="info"><b>📱 Instagram</b><a class="insta" href="https://www.instagram.com/zedframes.in/" target="_blank" rel="noopener">@zedframes.in</a></div>
+  </div>
+  <div class="contact-box">
+   <h3 style="margin-bottom:15px">Start Your Project</h3>
+   <form onsubmit="event.preventDefault();const n=this.name.value,p=this.phone.value,m=this.message.value;const text=encodeURIComponent('Hi ZED FRAMES,%0AName: '+n+'%0APhone: '+p+'%0AProject: '+m);window.open('https://wa.me/917827232645?text='+text,'_blank');">
+    <input name="name" placeholder="Your Name" required>
+    <input name="phone" type="tel" placeholder="Phone Number" required>
+    <textarea name="message" placeholder="Tell us about your project" required></textarea>
+    <button class="btn primary" type="submit">💬 Send on WhatsApp</button>
+   </form>
+  </div>
+ </div>
+</section>
+</main>
+
+<footer>
+ <div class="logo">ZED<span>FRAMES</span></div>
+ <p style="margin-top:8px">Videography • Video Editing • Social Media Content</p>
+ <p>© 2026 ZED FRAMES • Ghaziabad & Nearby • Adobe Premiere • Photoshop • Canva • CapCut</p>
+</footer>
+
+<script>
+const theme=document.getElementById("theme");
+const saved=localStorage.getItem("zed-theme");
+if(saved==="light"){document.body.classList.add("light");theme.textContent="🌙";}
+theme.onclick=()=>{
+ document.body.classList.toggle("light");
+ const light=document.body.classList.contains("light");
+ localStorage.setItem("zed-theme",light?"light":"dark");
+ theme.textContent=light?"🌙":"☀️";
+};
+const observer=new IntersectionObserver(entries=>{
+ entries.forEach(entry=>{if(entry.isIntersecting)entry.target.classList.add("show");});
+},{threshold:.10});
+document.querySelectorAll(".reveal").forEach(el=>observer.observe(el));
+document.querySelectorAll(".links a").forEach(a=>{
+ a.addEventListener("click",()=>document.querySelector(".links").classList.remove("open"));
+});
+</script>
+</body>
+</html>
