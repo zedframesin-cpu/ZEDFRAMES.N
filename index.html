@@ -127,6 +127,52 @@ textarea{min-height:130px;resize:vertical}
 }
 footer{border-top:1px solid var(--line);text-align:center;padding:28px 20px;color:#7f879f;font-size:13px}
 .reveal{opacity:0;transform:translateY(22px);transition:.7s}.reveal.show{opacity:1;transform:none}
+
+/* Payment Section Styling */
+.payment-section{padding:90px 22px}
+.payment-wrapper{
+ max-width:850px;margin:0 auto;display:grid;grid-template-columns:1fr 1.2fr;
+ gap:32px;background:linear-gradient(145deg,#0c142c,#060a17);
+ border:1px solid var(--line);border-radius:24px;padding:40px;
+ box-shadow:0 20px 50px rgba(0,0,0,0.5);align-items:center;
+}
+.light .payment-wrapper{background:linear-gradient(145deg,#ffffff,#f1f4ff);box-shadow:0 20px 40px rgba(0,0,0,0.06)}
+.qr-frame{
+ text-align:center;display:flex;flex-direction:column;align-items:center;justify-content:center;
+}
+.qr-glow-box{
+ background:#fff;padding:14px;border-radius:18px;
+ border:2px solid #19f7ff55;
+ box-shadow:0 0 35px rgba(25,247,255,0.22), 0 0 15px rgba(255,23,68,0.18);
+ display:inline-flex;justify-content:center;align-items:center;
+}
+.qr-glow-box img{
+ width:240px;height:240px;max-width:100%;aspect-ratio:1/1;
+ object-fit:contain;display:block;border-radius:6px;
+}
+.qr-instruction{
+ font-size:13px;color:var(--neon);letter-spacing:1.5px;text-transform:uppercase;
+ font-weight:800;margin-top:14px;
+}
+.payment-details{display:flex;flex-direction:column;gap:15px}
+.selected-plan-card{
+ background:rgba(255,255,255,0.04);border:1px solid var(--line);
+ border-radius:14px;padding:16px 20px;
+}
+.light .selected-plan-card{background:rgba(0,0,0,0.03)}
+.selected-plan-card .label{font-size:12px;letter-spacing:1px;color:var(--muted);text-transform:uppercase}
+.selected-plan-card .value{font-size:24px;font-weight:900;color:var(--neon);margin-top:4px}
+.upi-badge-list{
+ display:flex;flex-wrap:wrap;gap:8px;font-size:11px;font-weight:bold;margin:4px 0 10px 0;
+}
+.upi-badge-list span{
+ border:1px solid var(--line);background:rgba(255,255,255,0.05);padding:4px 10px;border-radius:20px;
+}
+.light .upi-badge-list span{background:rgba(0,0,0,0.05)}
+.payment-note{font-size:12px;color:var(--muted);line-height:1.5}
+.package-actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:10px}
+.package-actions .btn{flex:1;text-align:center;padding:11px 16px;font-size:13px}
+
 @media(max-width:850px){
  .links{display:none}.menu{display:block}.links.open{
   display:flex;position:absolute;top:64px;left:0;right:0;background:#070b18;
@@ -135,8 +181,15 @@ footer{border-top:1px solid var(--line);text-align:center;padding:28px 20px;colo
  .light .links.open{background:#fff}.grid,.contact{grid-template-columns:1fr}
  .software-row{grid-template-columns:repeat(2,1fr)}h1{letter-spacing:-2px}.title{font-size:34px}
  .portfolio{padding:30px 20px}.whatsapp{right:14px;bottom:14px}
+ .payment-wrapper{grid-template-columns:1fr;padding:26px 18px;text-align:center}
+ .payment-details{text-align:left}
+ .upi-badge-list{justify-content:center}
+ .qr-glow-box img{width:210px;height:210px}
 }
-@media(max-width:430px){.software-row{grid-template-columns:1fr 1fr}.nav{padding:14px 15px}.logo{font-size:21px}}
+@media(max-width:430px){
+ .software-row{grid-template-columns:1fr 1fr}.nav{padding:14px 15px}.logo{font-size:21px}
+ .package-actions{flex-direction:column}
+}
 </style>
 </head>
 <body>
@@ -147,6 +200,7 @@ footer{border-top:1px solid var(--line);text-align:center;padding:28px 20px;colo
   <div class="links">
    <a href="#home">Home</a><a href="#about">About</a><a href="#services">Services</a>
    <a href="#portfolio">Portfolio</a><a href="#packages">Packages</a>
+   <a href="#payment">Pay Now</a>
    <a href="#reviews">Reviews</a><a href="#contact">Contact</a>
   </div>
   <div class="nav-actions">
@@ -235,20 +289,71 @@ footer{border-top:1px solid var(--line);text-align:center;padding:28px 20px;colo
    <h3>STARTER</h3><div class="price">₹4,999 <small>/ month</small></div>
    <ul class="package-list"><li>5 videos monthly</li><li>Each video under 1 minute</li><li>Video shooting included</li><li>Professional editing</li><li>Social-media-ready delivery</li></ul>
    <p class="package-note">Best for businesses starting regular content.</p><br>
-   <a class="btn primary" href="https://wa.me/917827232645?text=Hi%20ZED%20FRAMES%2C%20I%20want%20to%20book%20the%20STARTER%20package%20for%20₹4%2C999%20per%20month." target="_blank" rel="noopener">📲 Book Now</a>
+   <div class="package-actions">
+    <a class="btn secondary" href="https://wa.me/917827232645?text=Hi%20ZED%20FRAMES%2C%20I%20want%20to%20book%20the%20STARTER%20package%20for%20₹4%2C999%20per%20month." target="_blank" rel="noopener">📲 Book</a>
+    <button class="btn primary" type="button" onclick="selectPackage('STARTER', '₹4,999 / month')">💳 Pay Now</button>
+   </div>
   </div>
   <div class="card featured">
    <div class="popular">MOST POPULAR</div>
    <h3>GROWTH</h3><div class="price">₹5,999 <small>/ month</small></div>
    <ul class="package-list"><li>8 videos monthly</li><li>Each video under 1 minute</li><li>2 videos every week</li><li>Video shooting included</li><li>Professional editing</li><li>Social-media-ready delivery</li></ul>
    <p class="package-note">Great for stores wanting consistent weekly content.</p><br>
-   <a class="btn primary" href="https://wa.me/917827232645?text=Hi%20ZED%20FRAMES%2C%20I%20want%20to%20book%20the%20GROWTH%20package%20for%20₹5%2C999%20per%20month." target="_blank" rel="noopener">📲 Book Now</a>
+   <div class="package-actions">
+    <a class="btn secondary" href="https://wa.me/917827232645?text=Hi%20ZED%20FRAMES%2C%20I%20want%20to%20book%20the%20GROWTH%20package%20for%20₹5%2C999%20per%20month." target="_blank" rel="noopener">📲 Book</a>
+    <button class="btn primary" type="button" onclick="selectPackage('GROWTH', '₹5,999 / month')">💳 Pay Now</button>
+   </div>
   </div>
   <div class="card">
    <h3>PRO</h3><div class="price">₹9,999 <small>/ month</small></div>
    <ul class="package-list"><li>10 videos monthly</li><li>Each video under 1 minute</li><li>Flexible shoot scheduling</li><li>Professional video shooting</li><li>Advanced video editing</li><li>Social-media-ready delivery</li></ul>
    <p class="package-note">For businesses that want flexible, high-volume content.</p><br>
-   <a class="btn primary" href="https://wa.me/917827232645?text=Hi%20ZED%20FRAMES%2C%20I%20want%20to%20book%20the%20PRO%20package%20for%20₹9%2C999%20per%20month." target="_blank" rel="noopener">📲 Book Now</a>
+   <div class="package-actions">
+    <a class="btn secondary" href="https://wa.me/917827232645?text=Hi%20ZED%20FRAMES%2C%20I%20want%20to%20book%20the%20PRO%20package%20for%20₹9%2C999%20per%20month." target="_blank" rel="noopener">📲 Book</a>
+    <button class="btn primary" type="button" onclick="selectPackage('PRO', '₹9,999 / month')">💳 Pay Now</button>
+   </div>
+  </div>
+ </div>
+</section>
+
+<!-- Secure Payment Section -->
+<section id="payment" class="reveal payment-section">
+ <h2 class="title">Pay ZEDFRAMES.IN</h2>
+ <p class="sub">Fast, secure UPI and QR payments for shoots and retainers.</p>
+ 
+ <div class="payment-wrapper">
+  <div class="qr-frame">
+   <div class="qr-glow-box">
+    <img src="1000174870.jpg" alt="Payment QR Code for ZED FRAMES" width="240" height="240">
+   </div>
+   <div class="qr-instruction">Scan the QR code to make your payment</div>
+  </div>
+  
+  <div class="payment-details">
+   <div class="selected-plan-card">
+    <div class="label">Selected Package / Service</div>
+    <div class="value" id="selectedPackageName">General Booking / Advance</div>
+    <div style="font-size: 19px; color: var(--red); font-weight: bold; margin-top: 4px;" id="selectedPackagePrice">Amount to enter on UPI app</div>
+   </div>
+
+   <div class="upi-badge-list">
+    <span>PhonePe</span>
+    <span>Google Pay</span>
+    <span>Paytm</span>
+    <span>BHIM UPI</span>
+   </div>
+
+   <p class="payment-note">
+    1. Scan using any UPI application.<br>
+    2. Enter the corresponding package or agreed advance amount.<br>
+    3. Once completed, share your payment confirmation screenshot on WhatsApp for confirmation and slot reservation.
+   </p>
+
+   <div>
+    <a id="confirmWhatsappBtn" class="btn primary" href="https://wa.me/917827232645?text=Hi%20ZED%20FRAMES%2C%20I%20have%20completed%20the%20payment.%20Here%20is%20my%20confirmation." target="_blank" rel="noopener">
+     📲 Share Payment Screenshot
+    </a>
+   </div>
   </div>
  </div>
 </section>
@@ -338,6 +443,26 @@ document.querySelectorAll(".reveal").forEach(el=>observer.observe(el));
 document.querySelectorAll(".links a").forEach(a=>{
  a.addEventListener("click",()=>document.querySelector(".links").classList.remove("open"));
 });
+
+function selectPackage(pkgName, pkgPrice) {
+  const nameEl = document.getElementById("selectedPackageName");
+  const priceEl = document.getElementById("selectedPackagePrice");
+  const whatsappConfirm = document.getElementById("confirmWhatsappBtn");
+  
+  if(nameEl) nameEl.textContent = pkgName + " Plan";
+  if(priceEl) priceEl.textContent = "Amount: " + pkgPrice;
+  
+  if(whatsappConfirm) {
+    const text = encodeURIComponent("Hi ZED FRAMES, I have completed the payment for the " + pkgName + " package (" + pkgPrice + "). Here is the payment screenshot.");
+    whatsappConfirm.href = "https://wa.me/917827232645?text=" + text;
+  }
+  
+  const paymentSection = document.getElementById("payment");
+  if(paymentSection) {
+    paymentSection.scrollIntoView({ behavior: "smooth" });
+  }
+}
 </script>
 </body>
 </html>
+
